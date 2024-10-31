@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Architecture Training</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .domain h1 {
+            color: #003366;
+            margin-top: 40px;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .section h2 {
+            color: #0056b3;
+            font-size: 1.3em;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #551a8b;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #0056b3;
+            color: #fff;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        #backToTop:hover {
+            background-color: #004080;
+        }
+        .dropdown {
+            margin: 20px auto;
+            text-align: center;
+            max-width: 100%;
+        }
+        .dropdown select {
+            padding: 10px;
+            font-size: 1em;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cybersecurity Architecture Training</h1>
+
+    <div class="filter-buttons">
+        <button onclick="showAll()">Show All</button>
+        <button onclick="showChecked()">Show Checked</button>
+        <button onclick="showUnchecked()">Show Unchecked</button>
+        <button onclick="resetCheckboxes()">Reset All</button>
+    </div>
+
+    <div class="dropdown">
+        <select id="sectionDropdown" onchange="navigateToSection()">
+            <option value="">Select a section</option>
+            <option value="domain1">Design Solutions that Align with Security Best Practices and Priorities</option>
+            <option value="zeroTrustAndSecurityFrameworks">Zero Trust and Security Frameworks</option>
+            <option value="cloudAdoptionAndArchitectureFrameworks">Cloud Adoption and Architecture Frameworks</option>
+            <option value="assessmentsAndTools">Assessments and Tools</option>
+            <option value="trainingModulesAndCaseStudies">Training Modules and Case Studies</option>
+            <option value="businessResilience">Business Resilience</option>
+            <option value="policyAndComplianceTools">Policy and Compliance Tools</option>
+            <option value="complianceModulesAndTrustCenters">Compliance Modules and Trust Centers</option>
+            <option value="domain2">Design Security Operations, Identity, and Compliance Capabilities</option>
+            <option value="identityAndAccessManagement">Identity and Access Management</option>
+            <option value="workloadIdentitiesAndKeyManagement">Workload Identities and Key Management</option>
+            <option value="keyVaultAndHSMSecurity">Key Vault and HSM Security</option>
+            <option value="privilegedAccessAndIdentityGovernance">Privileged Access and Identity Governance</option>
+            <option value="privilegedAccessSolutionsAndSecurityOperations">Privileged Access Solutions and Security Operations</option>
+            <option value="incidentResponseAndThreatIntelligence">Incident Response and Threat Intelligence</option>
+            <option value="microsoftDefenderAndZeroTrust">Microsoft Defender and Zero Trust in Microsoft 365</option>
+            <option value="domain3">Design Security Solutions for Infrastructure</option>
+            <option value="applicationAndNetworkSecurity">Application and Network Security</option>
+            <option value="secureApplicationsAndDevSecOps">Secure Applications and DevSecOps</option>
+            <option value="dataSecurityAndCompliance">Data Security and Compliance</option>
+            <option value="dataEncryptionAndStorageSecurity">Data Encryption and Storage Security</option>
+            <option value="advancedDataSecurity">Advanced Data Security</option>
+            <option value="infrastructureAndNetworkSecurity">Infrastructure and Network Security</option>
+            <option value="infrastructureMonitoringAndPostureManagement">Infrastructure Monitoring and Posture Management</option>
+            <option value="infrastructureCompliance">Infrastructure Compliance</option>
+            <option value="endpointSecurityAndDeviceManagement">Endpoint Security and Device Management</option>
+            <option value="defenderForEndpointAndDeviceBaselines">Microsoft Defender for Endpoint and Device Baselines</option>
+            <option value="domain4">Design Security Solutions for Applications and Data</option>
+            <option value="applicationSecurityAndDevSecOps">Application Security and DevSecOps</option>
+            <option value="additionalResources">Additional Resources</option>
+        </select>
+    </div>
+
+<!-- Domain 1: Design Solutions that Align with Security Best Practices and Priorities -->
+<div class="domain" id="domain1">
+    <h1>Design Solutions that Align with Security Best Practices and Priorities</h1>
+
+    <!-- Zero Trust and Security Frameworks -->
+    <div class="section" id="zeroTrustAndSecurityFrameworks">
+        <h2><input type="checkbox" id="checkbox-zeroTrustAndSecurityFrameworks" onclick="toggleSection('zeroTrustAndSecurityFrameworks')"> Zero Trust and Security Frameworks</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-zeroTrustRampOverview" onclick="toggleCheckbox('zeroTrustRampOverview')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-ramp-overview" target="_blank">Zero Trust Ramp Overview</a>: Introduction to the Zero Trust security model.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustDeploymentOverview" onclick="toggleCheckbox('zeroTrustDeploymentOverview')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview" target="_blank">Zero Trust Deployment Overview</a>: Deployment guidelines for Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-visibilityAutomationOrchestration" onclick="toggleCheckbox('visibilityAutomationOrchestration')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/visibility-automation-orchestration" target="_blank">Visibility, Automation, and Orchestration</a>: Importance of visibility in Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustIdentity" onclick="toggleCheckbox('zeroTrustIdentity')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/identity" target="_blank">Zero Trust Identity</a>: Securing identities in Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustApplications" onclick="toggleCheckbox('zeroTrustApplications')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/applications" target="_blank">Zero Trust Applications</a>: Protecting applications under Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustData" onclick="toggleCheckbox('zeroTrustData')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/data" target="_blank">Zero Trust Data</a>: Safeguarding data in Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustEndpoints" onclick="toggleCheckbox('zeroTrustEndpoints')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/endpoints" target="_blank">Zero Trust Endpoints</a>: Securing endpoints in Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustInfrastructure" onclick="toggleCheckbox('zeroTrustInfrastructure')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/infrastructure" target="_blank">Zero Trust Infrastructure</a>: Securing infrastructure using Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustNetworks" onclick="toggleCheckbox('zeroTrustNetworks')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/networks" target="_blank">Zero Trust Networks</a>: Network security in Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustBestPracticeFramework" onclick="toggleCheckbox('zeroTrustBestPracticeFramework')"> 
+                <a href="https://learn.microsoft.com/training/modules/introduction-zero-trust-best-practice-frameworks" target="_blank">Zero Trust Best Practice Framework</a>: Best practices for adopting Zero Trust.</li>
+            <li><input type="checkbox" id="checkbox-azureZeroTrustFundamentals" onclick="toggleCheckbox('azureZeroTrustFundamentals')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/zero-trust" target="_blank">Azure Zero Trust Fundamentals</a>: Concepts of Zero Trust within Azure.</li>
+            <li><input type="checkbox" id="checkbox-zeroTrustOverview" onclick="toggleCheckbox('zeroTrustOverview')"> 
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview" target="_blank">Zero Trust Overview</a>: Comprehensive Zero Trust model overview.</li>
+        </ul>
+    </div>
+
+    <!-- Cloud Adoption and Architecture Frameworks -->
+    <div class="section" id="cloudAdoptionAndArchitectureFrameworks">
+        <h2><input type="checkbox" id="checkbox-cloudAdoptionAndArchitectureFrameworks" onclick="toggleSection('cloudAdoptionAndArchitectureFrameworks')"> Cloud Adoption and Architecture Frameworks</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-azureCloudAdoptionFrameworkSecure" onclick="toggleCheckbox('azureCloudAdoptionFrameworkSecure')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/" target="_blank">Azure Cloud Adoption Framework - Secure</a>: Secure cloud adoption guidance.</li>
+            <li><input type="checkbox" id="checkbox-azureLandingZoneReady" onclick="toggleCheckbox('azureLandingZoneReady')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/" target="_blank">Azure Landing Zone Ready</a>: Preparing environments with landing zones.</li>
+            <li><input type="checkbox" id="checkbox-landingZoneSecurityDesign" onclick="toggleCheckbox('landingZoneSecurityDesign')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/security" target="_blank">Landing Zone Security Design</a>: Implementing security in landing zones.</li>
+            <li><input type="checkbox" id="checkbox-azureArchitectureReviewAssessment" onclick="toggleCheckbox('azureArchitectureReviewAssessment')"> 
+                <a href="https://learn.microsoft.com/en-us/assessments/azure-architecture-review/" target="_blank">Azure Architecture Review Assessment</a>: Assess architecture against best practices.</li>
+            <li><input type="checkbox" id="checkbox-azureWellArchitectedFramework" onclick="toggleCheckbox('azureWellArchitectedFramework')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/architecture/framework/" target="_blank">Azure Well-Architected Framework</a>: Framework for building secure infrastructure.</li>
+            <li><input type="checkbox" id="checkbox-missionCriticalAssessment" onclick="toggleCheckbox('missionCriticalAssessment')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/well-architected/mission-critical/mission-critical-assessment" target="_blank">Mission Critical Assessment</a>: Assess high availability applications.</li>
+            <li><input type="checkbox" id="checkbox-designSolutionsAligningFrameworks" onclick="toggleCheckbox('designSolutionsAligningFrameworks')"> 
+                <a href="https://learn.microsoft.com/training/modules/design-solutions-align-cloud-adoption-framework-well-architected-framework/" target="_blank">Aligning Cloud Adoption and Well-Architected Frameworks</a>: Frameworks integration training.</li>
+            <li><input type="checkbox" id="checkbox-defineSecurityStrategyCloudAdoptionFramework" onclick="toggleCheckbox('defineSecurityStrategyCloudAdoptionFramework')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/define-security-strategy" target="_blank">Define Security Strategy in Cloud Adoption Framework</a>: Establishing security strategy.</li>
+            <li><input type="checkbox" id="checkbox-azureArchitectureAssessment" onclick="toggleCheckbox('azureArchitectureAssessment')"> 
+                <a href="https://learn.microsoft.com/en-us/assessments/93dfb79b-71af-404d-897e-3928ecfb92b1/" target="_blank">Azure Architecture Assessment</a>: Azure architecture compliance assessment.</li>
+            <li><input type="checkbox" id="checkbox-enterpriseScaleLandingZone" onclick="toggleCheckbox('enterpriseScaleLandingZone')"> 
+                <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/hybrid/enterprise-scale-landing-zone" target="_blank">Enterprise-Scale Landing Zone for Hybrid Environments</a>: Hybrid cloud landing zone deployment.</li>
+            <li><input type="checkbox" id="checkbox-azureHybridScenarios" onclick="toggleCheckbox('azureHybridScenarios')"> 
+                <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/hybrid/" target="_blank">Azure Hybrid Scenarios</a>: Implementing hybrid solutions with Azure.</li>
+            <li><input type="checkbox" id="checkbox-enterpriseScaleArchitectureDiagram" onclick="toggleCheckbox('enterpriseScaleArchitectureDiagram')"> 
+                <a href="https://raw.githubusercontent.com/microsoft/CloudAdoptionFramework/master/ready/enterprise-scale-architecture.vsdx" target="_blank">Enterprise-Scale Architecture Diagram</a>: Diagram illustrating Azure architecture.</li>
+            <li><input type="checkbox" id="checkbox-azureCloudServicesComparison" onclick="toggleCheckbox('azureCloudServicesComparison')"> 
+                <a href="https://learn.microsoft.com/azure/cloud-services/cloud-services-choose-me" target="_blank">Azure Cloud Services Comparison</a>: Compare Azure cloud services for your needs.</li>
+        </ul>
+    </div>
+
+    <!-- Assessments and Tools -->
+    <div class="section" id="assessmentsAndTools">
+        <h2><input type="checkbox" id="checkbox-assessmentsAndTools" onclick="toggleSection('assessmentsAndTools')"> Assessments and Tools</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-microsoftAssessmentsPreAssessment" onclick="toggleCheckbox('microsoftAssessmentsPreAssessment')"> 
+                <a href="https://learn.microsoft.com/en-us/assessments/?mode=pre-assessment&id=8fefc6d5-97ac-42b3-8e97-d82701e55bab" target="_blank">Microsoft Assessments - Pre-Assessment Mode</a>: Evaluate your cloud environment.</li>
+            <li><input type="checkbox" id="checkbox-cloudAdoptionFrameworkOverview" onclick="toggleCheckbox('cloudAdoptionFrameworkOverview')"> 
+                <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/overview" target="_blank">Cloud Adoption Framework Overview</a>: Overview of the Cloud Adoption Framework.</li>
+            <li><input type="checkbox" id="checkbox-microsoftCybersecurityAndCloudSecurityBenchmark" onclick="toggleCheckbox('microsoftCybersecurityAndCloudSecurityBenchmark')"> 
+                <a href="https://learn.microsoft.com/training/modules/design-solutions-microsoft-cybersecurity-cloud-security-benchmark" target="_blank">Microsoft Cybersecurity and Cloud Security Benchmark</a>: Aligning solutions with security benchmarks.</li>
+            <li><input type="checkbox" id="checkbox-microsoftCybersecurityReferenceArchitecture" onclick="toggleCheckbox('microsoftCybersecurityReferenceArchitecture')"> 
+                <a href="https://aka.ms/mcra" target="_blank">Microsoft Cybersecurity Reference Architecture (MCRA)</a>: Cybersecurity architecture for Microsoft platforms.</li>
+            <li><input type="checkbox" id="checkbox-securityPriorityArchitecture" onclick="toggleCheckbox('securityPriorityArchitecture')"> 
+                <a href="https://aka.ms/SPA" target="_blank">Security Priority Architecture (SPA)</a>: Prioritizing security investments and initiatives.</li>
+            <li><input type="checkbox" id="checkbox-microsoftFormsSurvey1" onclick="toggleCheckbox('microsoftFormsSurvey1')"> 
+                <a href="https://forms.office.com/r/Cr5N25iRwW" target="_blank">Microsoft Forms Survey 1</a>: Survey form for gathering feedback.</li>
+            <li><input type="checkbox" id="checkbox-microsoftFormsSurvey2" onclick="toggleCheckbox('microsoftFormsSurvey2')"> 
+                <a href="https://forms.office.com/Pages/ShareFormPage.aspx?id=v4j5cvGGr0GRqy180BHbRwpfG-Vquv5DmCLkH2n8DBZUNjZaT045VTM3VUZIU1lFQzJZS0NJT05EQy4u&sharetoken=OGafrKZ5HmmeVcvqOEA8" target="_blank">Microsoft Forms Survey 2</a>: Survey form for collecting information.</li>
+        </ul>
+    </div>
+
+    <!-- Training Modules and Case Studies -->
+    <div class="section" id="trainingModulesAndCaseStudies">
+        <h2><input type="checkbox" id="checkbox-trainingModulesAndCaseStudies" onclick="toggleSection('trainingModulesAndCaseStudies')"> Training Modules and Case Studies</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-sc100DesignSolutions" onclick="toggleCheckbox('sc100DesignSolutions')"> 
+                <a href="https://learn.microsoft.com/training/paths/sc-100-design-solutions-best-practices-priorities" target="_blank">SC-100 Design Solutions Best Practices and Priorities</a>: Design solutions aligned with best practices.</li>
+            <li><input type="checkbox" id="checkbox-sc100MicrosoftCybersecurityArchitect" onclick="toggleCheckbox('sc100MicrosoftCybersecurityArchitect')"> 
+                <a href="https://microsoftlearning.github.io/SC-100-Microsoft-Cybersecurity-Architect/Instructions" target="_blank">SC-100 Microsoft Cybersecurity Architect Instructions</a>: SC-100 certification preparation.</li>
+            <li><input type="checkbox" id="checkbox-architectureBestPracticesCaseStudy" onclick="toggleCheckbox('architectureBestPracticesCaseStudy')"> 
+                <a href="https://microsoftlearning.github.io/SC-100-Microsoft-Cybersecurity-Architect/Instructions/CaseStudyv2/01b-Architecture_best_practices.html" target="_blank">Architecture Best Practices Case Study</a>: Best practices in architecture design.</li>
+            <li><input type="checkbox" id="checkbox-designSecureApplications" onclick="toggleCheckbox('designSecureApplications')"> 
+                <a href="https://learn.microsoft.com/training/modules/design-solutions-secure-applications" target="_blank">Design Secure Applications</a>: Strategies for secure applications.</li>
+            <li><input type="checkbox" id="checkbox-caseStudyIAM" onclick="toggleCheckbox('caseStudyIAM')"> 
+                <a href="https://microsoftlearning.github.io/SC-100-Microsoft-Cybersecurity-Architect/Instructions/CaseStudy/06-Design_solutions_identity_access_management.html" target="_blank">Case Study on Identity and Access Management</a>: IAM design case study.</li>
+            <li><input type="checkbox" id="checkbox-caseStudyPrivilegedAccess" onclick="toggleCheckbox('caseStudyPrivilegedAccess')"> 
+                <a href="https://microsoftlearning.github.io/SC-100-Microsoft-Cybersecurity-Architect/Instructions/CaseStudyv2/07-Design_solutions_securing_privileged_access.html" target="_blank">Case Study on Securing Privileged Access</a>: Privileged access design strategies.</li>
+            <li><input type="checkbox" id="checkbox-caseStudySecurityOperations" onclick="toggleCheckbox('caseStudySecurityOperations')"> 
+                <a href="https://microsoftlearning.github.io/SC-100-Microsoft-Cybersecurity-Architect/Instructions/CaseStudyv2/08-Design_solutions_security_operations.html" target="_blank">Case Study on Security Operations</a>: Designing solutions for security operations.</li>
+        </ul>
+    </div>
+
+    <!-- Business Resilience -->
+    <div class="section" id="businessResilience">
+        <h2><input type="checkbox" id="checkbox-businessResilience" onclick="toggleSection('businessResilience')"> Business Resilience</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-businessResilienceFramework" onclick="toggleCheckbox('businessResilienceFramework')"> 
+                <a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/secure/business-resilience" target="_blank">Business Resilience Framework</a>: Resilience against disruptions and threats.</li>
+            <li><input type="checkbox" id="checkbox-resilienceAgainstRansomware" onclick="toggleCheckbox('resilienceAgainstRansomware')"> 
+                <a href="https://www.microsoft.com/en-us/videoplayer/embed/RWVu7w?postJsllMsg=true" target="_blank">Resilience Against Ransomware</a>: Protect your organization from ransomware.</li>
+            <li><input type="checkbox" id="checkbox-protectFromRansomwarePDF" onclick="toggleCheckbox('protectFromRansomwarePDF')"> 
+                <a href="https://download.microsoft.com/download/5/e/3/5e37cbff-9a7a-45b2-8b95-6d3cc5426301/protect-your-organization-from-ransomware.pdf" target="_blank">Protect Your Organization from Ransomware (PDF)</a>: Ransomware protection strategies.</li>
+            <li><input type="checkbox" id="checkbox-protectAgainstRansomware" onclick="toggleCheckbox('protectAgainstRansomware')"> 
+                <a href="https://learn.microsoft.com/security/compass/protect-against-ransomware" target="_blank">Protect Against Ransomware</a>: Ransomware protection best practices.</li>
+            <li><input type="checkbox" id="checkbox-securityPriorityArchitecture" onclick="toggleCheckbox('securityPriorityArchitecture')"> 
+                <a href="https://aka.ms/SPA" target="_blank">Security Priority Architecture (SPA)</a>: Prioritizing security initiatives to enhance resilience.</li>
+        </ul>
+    </div>
+</div>
+
+    <!-- Policy and Compliance Tools -->
+    <div class="section" id="policyAndComplianceTools">
+        <h2><input type="checkbox" id="checkbox-policyAndComplianceTools" onclick="toggleSection('policyAndComplianceTools')"> Policy and Compliance Tools</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-azurePolicyOverview" onclick="toggleCheckbox('azurePolicyOverview')"> 
+                <a href="https://learn.microsoft.com/azure/governance/policy/overview" target="_blank">Azure Policy Overview</a>: Introduction to enforcing organizational standards.</li>
+            <li><input type="checkbox" id="checkbox-policyAssignmentsCreation" onclick="toggleCheckbox('policyAssignmentsCreation')"> 
+                <a href="https://learn.microsoft.com/en-us/rest/api/policy/policy-assignments/create?view=rest-policy-2023-04-01&tabs=HTTP" target="_blank">Policy Assignments Creation via REST API</a>: Creating policy assignments using REST API.</li>
+            <li><input type="checkbox" id="checkbox-operationsIdentityComplianceCapabilities" onclick="toggleCheckbox('operationsIdentityComplianceCapabilities')"> 
+                <a href="https://learn.microsoft.com/training/paths/sc-100-design-operations-identity-compliance-capabilities" target="_blank">Operations, Identity, and Compliance Capabilities</a>: Training path for compliance capabilities.</li>
+            <li><input type="checkbox" id="checkbox-regulatoryComplianceAzure" onclick="toggleCheckbox('regulatoryComplianceAzure')"> 
+                <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/govern/policy-compliance/regulatory-compliance" target="_blank">Regulatory Compliance in Azure</a>: Achieving regulatory compliance with Azure.</li>
+            <li><input type="checkbox" id="checkbox-securityBaselineCompliance" onclick="toggleCheckbox('securityBaselineCompliance')"> 
+                <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/govern/security-baseline/" target="_blank">Security Baseline Compliance</a>: Implementing security baselines for compliance.</li>
+            <li><input type="checkbox" id="checkbox-azurePolicyRemediationResources" onclick="toggleCheckbox('azurePolicyRemediationResources')"> 
+                <a href="https://learn.microsoft.com/azure/governance/policy/how-to/remediate-resources?tabs=azure-portal" target="_blank">Azure Policy - Remediation Resources</a>: Remediating non-compliant resources.</li>
+            <li><input type="checkbox" id="checkbox-defenderForCloudComplianceDashboard" onclick="toggleCheckbox('defenderForCloudComplianceDashboard')"> 
+                <a href="https://learn.microsoft.com/azure/defender-for-cloud/regulatory-compliance-dashboard" target="_blank">Defender for Cloud Regulatory Compliance Dashboard</a>: Compliance monitoring with Defender for Cloud.</li>
+            <li><input type="checkbox" id="checkbox-defenderForCloudGuide" onclick="toggleCheckbox('defenderForCloudGuide')"> 
+                <a href="https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-planning-and-operations-guide" target="_blank">Defender for Cloud - Planning and Operations Guide</a>: Guide for planning and operations with Defender for Cloud.</li>
+            <li><input type="checkbox" id="checkbox-azurePurviewDataLakeArchitecture" onclick="toggleCheckbox('azurePurviewDataLakeArchitecture')"> 
+                <a href="https://learn.microsoft.com/azure/architecture/solution-ideas/articles/azure-purview-data-lake-estate-architecture" target="_blank">Azure Purview Data Lake Estate Architecture</a>: Data governance architecture for Azure Purview.</li>
+            <li><input type="checkbox" id="checkbox-defenderForCloudEASM" onclick="toggleCheckbox('defenderForCloudEASM')"> 
+                <a href="https://learn.microsoft.com/azure/defender-for-cloud/concept-easm" target="_blank">Defender for Cloud External Attack Surface Management</a>: External attack surface management in Defender for Cloud.</li>
+        </ul>
+    </div>
+
+    <!-- Compliance Modules and Trust Centers -->
+    <div class="section" id="complianceModulesAndTrustCenters">
+        <h2><input type="checkbox" id="checkbox-complianceModulesAndTrustCenters" onclick="toggleSection('complianceModulesAndTrustCenters')"> Compliance Modules and Trust Centers</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-regulatoryComplianceSolutions" onclick="toggleCheckbox('regulatoryComplianceSolutions')"> 
+                <a href="https://learn.microsoft.com/training/modules/design-solutions-regulatory-compliance" target="_blank">Regulatory Compliance Solutions</a>: Designing solutions for regulatory compliance.</li>
+            <li><input type="checkbox" id="checkbox-microsoftTrustCenterComplianceOverview" onclick="toggleCheckbox('microsoftTrustCenterComplianceOverview')"> 
+                <a href="https://www.microsoft.com/trust-center/compliance/compliance-overview" target="_blank">Microsoft Trust Center - Compliance Overview</a>: Overview of Microsoft's compliance offerings.</li>
+            <li><input type="checkbox" id="checkbox-serviceTrustPortal" onclick="toggleCheckbox('serviceTrustPortal')"> 
+                <a href="https://servicetrust.microsoft.com/" target="_blank">Service Trust Portal</a>: Compliance documentation and resources.</li>
+        </ul>
+    </div>
+
+
+<!-- Domain 2: Design Security Operations, Identity, and Compliance Capabilities -->
+<div class="domain" id="domain2">
+    <h1>Design Security Operations, Identity, and Compliance Capabilities</h1>
+
+    <!-- Identity and Access Management -->
+    <div class="section" id="identityAndAccessManagement">
+        <h2><input type="checkbox" id="checkbox-identityAndAccessManagement" onclick="toggleSection('identityAndAccessManagement')"> Identity and Access Management</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-azureADFeatureComparison" onclick="toggleCheckbox('azureADFeatureComparison')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare" target="_blank">Azure Active Directory - Feature Comparison</a>: Comparison of Azure AD features.</li>
+            <li><input type="checkbox" id="checkbox-extendOnPremisesAD" onclick="toggleCheckbox('extendOnPremisesAD')">
+                <a href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/identity/adds-extend-domain" target="_blank">Extend On-Premises AD to Azure</a>: Guide for extending AD to Azure.</li>
+            <li><input type="checkbox" id="checkbox-secureYourADDomain" onclick="toggleCheckbox('secureYourADDomain')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory-domain-services/secure-your-domain" target="_blank">Secure Your AD Domain</a>: Best practices for securing Azure AD Domain Services.</li>
+            <li><input type="checkbox" id="checkbox-externalIdentitiesOverview" onclick="toggleCheckbox('externalIdentitiesOverview')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/external-identities/" target="_blank">Azure External Identities Overview</a>: Collaborate securely with external users.</li>
+            <li><input type="checkbox" id="checkbox-detailedExternalIdentities" onclick="toggleCheckbox('detailedExternalIdentities')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/external-identities/external-identities-overview" target="_blank">Azure External Identities Detailed Overview</a>: In-depth guide for managing external identities.</li>
+            <li><input type="checkbox" id="checkbox-conditionalAccessEvaluation" onclick="toggleCheckbox('conditionalAccessEvaluation')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/concept-continuous-access-evaluation" target="_blank">Conditional Access Evaluation</a>: Continuous access management.</li>
+            <li><input type="checkbox" id="checkbox-conditionalAccessPolicies" onclick="toggleCheckbox('conditionalAccessPolicies')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policies" target="_blank">Conditional Access Policies</a>: Guide to implementing conditional policies.</li>
+            <li><input type="checkbox" id="checkbox-identityProtectionOverview" onclick="toggleCheckbox('identityProtectionOverview')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection" target="_blank">Identity Protection Overview</a>: Introduction to identity protection in Azure AD.</li>
+            <li><input type="checkbox" id="checkbox-investigateIdentityRisks" onclick="toggleCheckbox('investigateIdentityRisks')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-investigate-risk" target="_blank">Investigate Identity Risks</a>: Investigating identity risks in Azure AD.</li>
+            <li><input type="checkbox" id="checkbox-conditionalAccessDesign" onclick="toggleCheckbox('conditionalAccessDesign')">
+                <a href="https://learn.microsoft.com/en-us/azure/architecture/guide/security/conditional-access-design" target="_blank">Conditional Access Design</a>: Design considerations for conditional access.</li>
+        </ul>
+    </div>
+
+    <!-- Workload Identities and Key Management -->
+    <div class="section" id="workloadIdentitiesAndKeyManagement">
+        <h2><input type="checkbox" id="checkbox-workloadIdentitiesAndKeyManagement" onclick="toggleSection('workloadIdentitiesAndKeyManagement')"> Workload Identities and Key Management</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-secureAccessForWorkloadIdentities" onclick="toggleCheckbox('secureAccessForWorkloadIdentities')">
+                <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-secure-applications/6-secure-access-workload-identities" target="_blank">Secure Access for Workload Identities</a>: Module on securing workload identities.</li>
+            <li><input type="checkbox" id="checkbox-workloadIdentitiesOverview" onclick="toggleCheckbox('workloadIdentitiesOverview')">
+                <a href="https://learn.microsoft.com/azure/active-directory/workload-identities/workload-identities-overview" target="_blank">Workload Identities Overview</a>: Managing workload identities in Azure AD.</li>
+            <li><input type="checkbox" id="checkbox-keyManagementFundamentals" onclick="toggleCheckbox('keyManagementFundamentals')">
+                <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/key-management" target="_blank">Azure Key Management Fundamentals</a>: Core concepts of key management in Azure.</li>
+            <li><input type="checkbox" id="checkbox-keyVaultBestPractices" onclick="toggleCheckbox('keyVaultBestPractices')">
+                <a href="https://learn.microsoft.com/en-us/azure/key-vault/general/best-practices" target="_blank">Azure Key Vault Best Practices</a>: Best practices for using Key Vault.</li>
+            <li><input type="checkbox" id="checkbox-keyVaultBasicConcepts" onclick="toggleCheckbox('keyVaultBasicConcepts')">
+                <a href="https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts" target="_blank">Azure Key Vault Basic Concepts</a>: Introduction to Key Vault concepts.</li>
+        </ul>
+    </div>
+
+    <!-- Key Vault and HSM Security -->
+    <div class="section" id="keyVaultAndHSMSecurity">
+        <h2><input type="checkbox" id="checkbox-keyVaultAndHSMSecurity" onclick="toggleSection('keyVaultAndHSMSecurity')"> Key Vault and HSM Security</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-keyVaultOverview" onclick="toggleCheckbox('keyVaultOverview')">
+                <a href="https://learn.microsoft.com/azure/key-vault/general/overview" target="_blank">Key Vault Overview</a>: Secure storage for keys, secrets, and certificates.</li>
+            <li><input type="checkbox" id="checkbox-managedHSMOverview" onclick="toggleCheckbox('managedHSMOverview')">
+                <a href="https://learn.microsoft.com/azure/key-vault/managed-hsm/overview" target="_blank">Managed HSM Overview</a>: Managed Hardware Security Modules in Azure.</li>
+            <li><input type="checkbox" id="checkbox-dedicatedHSMOverview" onclick="toggleCheckbox('dedicatedHSMOverview')">
+                <a href="https://learn.microsoft.com/azure/dedicated-hsm/overview" target="_blank">Dedicated HSM Overview</a>: Dedicated HSM for high-security storage.</li>
+            <li><input type="checkbox" id="checkbox-paymentHSMOverview" onclick="toggleCheckbox('paymentHSMOverview')">
+                <a href="https://learn.microsoft.com/azure/payment-hsm/overview" target="_blank">Payment HSM Overview</a>: Secure transactions with Payment HSM.</li>
+            <li><input type="checkbox" id="checkbox-keyVaultSecurityFeatures" onclick="toggleCheckbox('keyVaultSecurityFeatures')">
+                <a href="https://learn.microsoft.com/azure/key-vault/general/security-features" target="_blank">Key Vault Security Features</a>: Security features in Key Vault.</li>
+            <li><input type="checkbox" id="checkbox-keyVaultVNetServiceEndpoints" onclick="toggleCheckbox('keyVaultVNetServiceEndpoints')">
+                <a href="https://learn.microsoft.com/azure/key-vault/general/overview-vnet-service-endpoints" target="_blank">Key Vault VNet Service Endpoints</a>: Integrating Key Vault with virtual networks.</li>
+            <li><input type="checkbox" id="checkbox-keyVaultSoftDeleteOverview" onclick="toggleCheckbox('keyVaultSoftDeleteOverview')">
+                <a href="https://learn.microsoft.com/azure/key-vault/general/soft-delete-overview" target="_blank">Key Vault Soft Delete Overview</a>: Recover deleted Key Vault objects.</li>
+            <li><input type="checkbox" id="checkbox-keyVaultLogging" onclick="toggleCheckbox('keyVaultLogging')">
+                <a href="https://learn.microsoft.com/azure/key-vault/general/logging" target="_blank">Key Vault Logging</a>: Enable and use Key Vault logging.</li>
+            <li><input type="checkbox" id="checkbox-keyVaultAlerts" onclick="toggleCheckbox('
+
+keyVaultAlerts')">
+                <a href="https://learn.microsoft.com/azure/key-vault/general/alert" target="_blank">Key Vault Alerts</a>: Set up alerts for Key Vault events.</li>
+        </ul>
+    </div>
+
+    <!-- Privileged Access and Identity Governance -->
+    <div class="section" id="privilegedAccessAndIdentityGovernance">
+        <h2><input type="checkbox" id="checkbox-privilegedAccessAndIdentityGovernance" onclick="toggleSection('privilegedAccessAndIdentityGovernance')"> Privileged Access and Identity Governance</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-pimConfiguration" onclick="toggleCheckbox('pimConfiguration')">
+                <a href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure" target="_blank">Privileged Identity Management Configuration</a>: Configure PIM for just-in-time access.</li>
+            <li><input type="checkbox" id="checkbox-pimADDomainServices" onclick="toggleCheckbox('pimADDomainServices')">
+                <a href="https://learn.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services-" target="_blank">PIM for AD Domain Services</a>: Implementing PIM for AD DS.</li>
+            <li><input type="checkbox" id="checkbox-privilegedAccessM365" onclick="toggleCheckbox('privilegedAccessM365')">
+                <a href="https://learn.microsoft.com/microsoft-365/compliance/privileged-access-management?view=o365-worldwide-" target="_blank">Privileged Access Management for Microsoft 365</a>: Control privileged access in M365.</li>
+            <li><input type="checkbox" id="checkbox-entitlementManagement" onclick="toggleCheckbox('entitlementManagement')">
+                <a href="https://learn.microsoft.com/azure/active-directory/governance/entitlement-management-overview-" target="_blank">Entitlement Management Overview</a>: Manage user access and entitlements.</li>
+            <li><input type="checkbox" id="checkbox-azureLighthouse" onclick="toggleCheckbox('azureLighthouse')">
+                <a href="https://learn.microsoft.com/azure/lighthouse/overview" target="_blank">Azure Lighthouse Overview</a>: Multi-tenant management for service providers.</li>
+            <li><input type="checkbox" id="checkbox-m365TenantManagement" onclick="toggleCheckbox('m365TenantManagement')">
+                <a href="https://learn.microsoft.com/microsoft-365/solutions/tenant-management-overview?view=o365-worldwide" target="_blank">Microsoft 365 Tenant Management Overview</a>: Multi-tenant management guidance.</li>
+            <li><input type="checkbox" id="checkbox-m365LighthouseTenants" onclick="toggleCheckbox('m365LighthouseTenants')">
+                <a href="https://learn.microsoft.com/en-us/microsoft-365/lighthouse/m365-lighthouse-tenants-page-overview?view=o365-worldwide" target="_blank">Microsoft 365 Lighthouse Tenants Page Overview</a>: Managing tenants with Lighthouse.</li>
+            <li><input type="checkbox" id="checkbox-cloudInfrastructureEntitlementManagement" onclick="toggleCheckbox('cloudInfrastructureEntitlementManagement')">
+                <a href="https://learn.microsoft.com/azure/active-directory/cloud-infrastructure-entitlement-management/" target="_blank">Cloud Infrastructure Entitlement Management</a>: Manage cloud entitlements and permissions.</li>
+            <li><input type="checkbox" id="checkbox-privilegedAccessDevices" onclick="toggleCheckbox('privilegedAccessDevices')">
+                <a href="https://learn.microsoft.com/security/privileged-access-workstations/privileged-access-devices" target="_blank">Privileged Access Devices</a>: Using devices for privileged access tasks.</li>
+            <li><input type="checkbox" id="checkbox-azureBastion" onclick="toggleCheckbox('azureBastion')">
+                <a href="https://learn.microsoft.com/azure/bastion/bastion-overview" target="_blank">Azure Bastion Overview</a>: Secure remote access to VMs.</li>
+            <li><input type="checkbox" id="checkbox-privilegedAccessWorkstations" onclick="toggleCheckbox('privilegedAccessWorkstations')">
+                <a href="https://learn.microsoft.com/en-us/security/privileged-access-workstations/overview" target="_blank">Privileged Access Workstations Overview</a>: Secure workstations for administration.</li>
+            <li><input type="checkbox" id="checkbox-enterpriseAccessModelDesign" onclick="toggleCheckbox('enterpriseAccessModelDesign')">
+                <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-secure-privileged-access/2-enterprise-access-model" target="_blank">Enterprise Access Model Design</a>: Designing secure privileged access.</li>
+            <li><input type="checkbox" id="checkbox-privilegedAccessAccessModel" onclick="toggleCheckbox('privilegedAccessAccessModel')">
+                <a href="https://learn.microsoft.com/security/compass/privileged-access-access-model" target="_blank">Privileged Access Access Model</a>: Secure access model framework.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Privileged Access Solutions and Security Operations -->
+<div class="section" id="privilegedAccessSolutionsAndSecurityOperations">
+    <h2><input type="checkbox" id="checkbox-privilegedAccessSolutionsAndSecurityOperations" onclick="toggleSection('privilegedAccessSolutionsAndSecurityOperations')"> Privileged Access Solutions and Security Operations</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-securePrivilegedAccessSolutions" onclick="toggleCheckbox('securePrivilegedAccessSolutions')">
+            <a href="https://learn.microsoft.com/training/modules/design-solutions-secure-privileged-access" target="_blank">Secure Privileged Access Solutions</a>: Training on securing privileged access.</li>
+        <li><input type="checkbox" id="checkbox-multiTenantSaaSIdentitySolution" onclick="toggleCheckbox('multiTenantSaaSIdentitySolution')">
+            <a href="https://learn.microsoft.com/azure/architecture/example-scenario/multi-saas/multitenant-saas" target="_blank">Multi-Tenant SaaS Identity Solution</a>: Guidance for multi-tenant SaaS applications.</li>
+        <li><input type="checkbox" id="checkbox-multitenantWebAppAccess" onclick="toggleCheckbox('multitenantWebAppAccess')">
+            <a href="https://learn.microsoft.com/azure/architecture/example-scenario/security/access-multitenant-web-app-from-on-premises" target="_blank">Access to Multitenant Web App from On-Premises</a>: Securely access web apps from on-premises.</li>
+        <li><input type="checkbox" id="checkbox-unifiedOperations" onclick="toggleCheckbox('unifiedOperations')">
+            <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/hybrid/unified-operations" target="_blank">Unified Operations in Cloud Adoption Framework</a>: Unified operations guidance.</li>
+        <li><input type="checkbox" id="checkbox-microsoftSecurityCopilot" onclick="toggleCheckbox('microsoftSecurityCopilot')">
+            <a href="https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot" target="_blank">Microsoft Security Copilot Overview</a>: Introduction to AI-driven security.</li>
+        <li><input type="checkbox" id="checkbox-loggingThreatDetectionBenchmark" onclick="toggleCheckbox('loggingThreatDetectionBenchmark')">
+            <a href="https://learn.microsoft.com/security/benchmark/azure/mcsb-logging-threat-detection" target="_blank">Logging and Threat Detection Benchmark</a>: Logging practices benchmark in Azure.</li>
+        <li><input type="checkbox" id="checkbox-azureMonitorOverview" onclick="toggleCheckbox('azureMonitorOverview')">
+            <a href="https://learn.microsoft.com/azure/azure-monitor/overview" target="_blank">Azure Monitor Overview</a>: Monitoring and diagnostics in Azure.</li>
+        <li><input type="checkbox" id="checkbox-sentinelWorkspaceArchitecture" onclick="toggleCheckbox('sentinelWorkspaceArchitecture')">
+            <a href="https://learn.microsoft.com/en-us/azure/sentinel/best-practices-workspace-architecture" target="_blank">Azure Sentinel Workspace Architecture Best Practices</a>: Sentinel architecture design.</li>
+        <li><input type="checkbox" id="checkbox-defenderEndpointOverview" onclick="toggleCheckbox('defenderEndpointOverview')">
+            <a href="https://learn.microsoft.com/microsoft-365/security/defender/eval-overview?view=o365-worldwide" target="_blank">Microsoft Defender for Endpoint Overview</a>: Overview of Defender for Endpoint.</li>
+        <li><input type="checkbox" id="checkbox-sentinelAutomationGuide" onclick="toggleCheckbox('sentinelAutomationGuide')">
+            <a href="https://learn.microsoft.com/en-us/azure/sentinel/automation" target="_blank">Sentinel Automation Guide</a>: Automating security operations.</li>
+        <li><input type="checkbox" id="checkbox-automateIncidentHandling" onclick="toggleCheckbox('automateIncidentHandling')">
+            <a href="https://learn.microsoft.com/azure/sentinel/automate-incident-handling-with-automation-rules" target="_blank">Automate Incident Handling with Sentinel Rules</a>: Using Sentinel for incident response.</li>
+        <li><input type="checkbox" id="checkbox-logicAppsOverview" onclick="toggleCheckbox('logicAppsOverview')">
+            <a href="https://learn.microsoft.com/azure/logic-apps/logic-apps-overview" target="_blank">Azure Logic Apps Overview</a>: Build automated workflows in Azure.</li>
+        <li><input type="checkbox" id="checkbox-incidentResponseBenchmark" onclick="toggleCheckbox('incidentResponseBenchmark')">
+            <a href="https://learn.microsoft.com/security/benchmark/azure/mcsb-incident-response" target="_blank">Azure Security Benchmark for Incident Response</a>: Incident response best practices.</li>
+    </ul>
+</div>
+
+<!-- Incident Response and Threat Intelligence -->
+<div class="section" id="incidentResponseAndThreatIntelligence">
+    <h2><input type="checkbox" id="checkbox-incidentResponseAndThreatIntelligence" onclick="toggleSection('incidentResponseAndThreatIntelligence')"> Incident Response and Threat Intelligence</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-sentinelThreatIntelligenceOverview" onclick="toggleCheckbox('sentinelThreatIntelligenceOverview')">
+            <a href="https://learn.microsoft.com/azure/sentinel/understand-threat-intelligence?source=recommendations" target="_blank">Azure Sentinel Threat Intelligence Overview</a>: Leveraging threat intelligence in Sentinel.</li>
+        <li><input type="checkbox" id="checkbox-sentinelHunting" onclick="toggleCheckbox('sentinelHunting')">
+            <a href="https://learn.microsoft.com/azure/sentinel/hunting" target="_blank">Hunting in Azure Sentinel</a>: Proactively hunting for threats in Sentinel.</li>
+        <li><input type="checkbox" id="checkbox-securityOperationsSolutions" onclick="toggleCheckbox('securityOperationsSolutions')">
+            <a href="https://learn.microsoft.com/training/modules/design-solutions-security-operations" target="_blank">Security Operations Solutions</a>: Training on designing security operations.</li>
+        <li><input type="checkbox" id="checkbox-sentinelMITRECoverage" onclick="toggleCheckbox('sentinelMITRECoverage')">
+            <a href="https://learn.microsoft.com/azure/sentinel/mitre-coverage" target="_blank">Azure Sentinel MITRE Coverage</a>: How Sentinel maps to MITRE ATT&CK.</li>
+        <li><input type="checkbox" id="checkbox-cloudSecurityOperationsCenter" onclick="toggleCheckbox('cloudSecurityOperationsCenter')">
+            <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/organize/cloud-security-operations-center" target="_blank">Cloud Security Operations Center in CAF</a>: Establishing a CSOC.</li>
+        <li><input type="checkbox" id="checkbox-automatedResponseSolutions" onclick="toggleCheckbox('automatedResponseSolutions')">
+            <a href="https://learn.microsoft.com/azure/architecture/solution-ideas/articles/microsoft-sentinel-automated-response" target="_blank">Microsoft Sentinel Automated Response Solutions</a>: Automated response solutions in Sentinel.</li>
+        <li><input type="checkbox" id="checkbox-hybridSecurityMonitoring" onclick="toggleCheckbox('hybridSecurityMonitoring')">
+            <a href="https://learn.microsoft.com/azure/architecture/hybrid/hybrid-security-monitoring" target="_blank">Hybrid Security Monitoring</a>: Security monitoring for hybrid environments.</li>
+        <li><input type="checkbox" id="checkbox-integratingDefenderAzure" onclick="toggleCheckbox('integratingDefenderAzure')">
+            <a href="https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/microsoft-365-defender-security-integrate-azure" target="_blank">Integrating Microsoft Defender and Azure</a>: Integrating Defender with Azure services.</li>
+    </ul>
+</div>
+
+<!-- Microsoft Defender and Zero Trust in Microsoft 365 -->
+<div class="section" id="microsoftDefenderAndZeroTrust">
+    <h2><input type="checkbox" id="checkbox-microsoftDefenderAndZeroTrust" onclick="toggleSection('microsoftDefenderAndZeroTrust')"> Microsoft Defender and Zero Trust in Microsoft 365</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-zeroTrustM365" onclick="toggleCheckbox('zeroTrustM365')">
+            <a href="https://learn.microsoft.com/microsoft-365/security/microsoft-365-zero-trust?view=o365-worldwide" target="_blank">Microsoft 365 Zero Trust Security</a>: Zero Trust for Microsoft 365.</li>
+        <li><input type="checkbox" id="checkbox-m365CopilotPrivacy" onclick="toggleCheckbox('m365CopilotPrivacy')">
+            <a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy" target="_blank">Microsoft 365 Copilot Privacy</a>: Privacy in Microsoft 365 Copilot.</li>
+        <li><input type="checkbox" id="checkbox-securitySolutionsForAppsAndData" onclick="toggleCheckbox('securitySolutionsForAppsAndData')">
+            <a href="https://learn.microsoft
+
+.com/training/paths/sc-100-design-security-solutions-applications-data" target="_blank">Security Solutions for Applications and Data</a>: Learning path for app and data security.</li>
+        <li><input type="checkbox" id="checkbox-defenderForOffice365" onclick="toggleCheckbox('defenderForOffice365')">
+            <a href="https://learn.microsoft.com/microsoft-365/security/office-365-security/microsoft-defender-for-office-365-product-overview?view=o365-worldwide" target="_blank">Microsoft Defender for Office 365</a>: Defender overview for Office 365.</li>
+        <li><input type="checkbox" id="checkbox-secureScoreImprovementActions" onclick="toggleCheckbox('secureScoreImprovementActions')">
+            <a href="https://learn.microsoft.com/microsoft-365/security/defender/microsoft-secure-score-improvement-actions?view=o365-worldwide" target="_blank">Microsoft Secure Score Improvement Actions</a>: Improve security posture with Secure Score.</li>
+        <li><input type="checkbox" id="checkbox-layeredDefenseDefenderM365" onclick="toggleCheckbox('layeredDefenseDefenderM365')">
+            <a href="https://learn.microsoft.com/azure/architecture/solution-ideas/articles/microsoft-365-defender-build-second-layer-defense" target="_blank">Microsoft 365 Defender Layered Defense</a>: Build layered defense with Defender.</li>
+        <li><input type="checkbox" id="checkbox-secureMicrosoft365Apps" onclick="toggleCheckbox('secureMicrosoft365Apps')">
+            <a href="https://learn.microsoft.com/training/modules/design-solutions-secure-microsoft-365" target="_blank">Design Secure Microsoft 365 Applications</a>: Module on securing Microsoft 365 applications.</li>
+        <li><input type="checkbox" id="checkbox-defenderForCloudApps" onclick="toggleCheckbox('defenderForCloudApps')">
+            <a href="https://learn.microsoft.com/en-us/defender-cloud-apps/what-is-defender-for-cloud-apps" target="_blank">Defender for Cloud Apps Introduction</a>: Overview of Defender for Cloud Apps for SaaS security.</li>
+    </ul>
+</div>
+
+<!-- Domain 3: Design Security Solutions for Infrastructure -->
+<div class="domain" id="domain3">
+    <h1>Design Security Solutions for Infrastructure</h1>
+
+    <!-- Application and Network Security -->
+    <div class="section" id="applicationAndNetworkSecurity">
+        <h2><input type="checkbox" id="checkbox-applicationAndNetworkSecurity" onclick="toggleSection('applicationAndNetworkSecurity')"> Application and Network Security</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-apiManagementKeyConcepts" onclick="toggleCheckbox('apiManagementKeyConcepts')">
+                <a href="https://learn.microsoft.com/azure/api-management/api-management-key-concepts" target="_blank">Azure API Management Key Concepts</a>: Key concepts for securing APIs.</li>
+            <li><input type="checkbox" id="checkbox-apiManagementSecurityBaseline" onclick="toggleCheckbox('apiManagementSecurityBaseline')">
+                <a href="https://learn.microsoft.com/security/benchmark/azure/baselines/api-management-security-baseline" target="_blank">API Management Security Baseline</a>: Security baseline for Azure API Management.</li>
+            <li><input type="checkbox" id="checkbox-virtualNetworkIntegration" onclick="toggleCheckbox('virtualNetworkIntegration')">
+                <a href="https://learn.microsoft.com/en-us/azure/architecture/example-scenario/integrated-multiservices/virtual-network-integration" target="_blank">Virtual Network Integration Example Scenario</a>: Integrating services in a virtual network.</li>
+            <li><input type="checkbox" id="checkbox-wafOverview" onclick="toggleCheckbox('wafOverview')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/overview" target="_blank">Web Application Firewall Overview</a>: Introduction to Azure WAF.</li>
+            <li><input type="checkbox" id="checkbox-wafApplicationGateway" onclick="toggleCheckbox('wafApplicationGateway')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/ag/ag-overview" target="_blank">WAF Application Gateway Overview</a>: Overview of WAF in Application Gateway.</li>
+            <li><input type="checkbox" id="checkbox-frontDoorSecurityWAF" onclick="toggleCheckbox('frontDoorSecurityWAF')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/afds/afds-overview" target="_blank">Front Door Security with WAF</a>: Security for web apps using Azure Front Door.</li>
+            <li><input type="checkbox" id="checkbox-cdnAndWAFOverview" onclick="toggleCheckbox('cdnAndWAFOverview')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/cdn/cdn-overview" target="_blank">Content Delivery Network and WAF Overview</a>: Securing CDN endpoints with WAF.</li>
+            <li><input type="checkbox" id="checkbox-wafCRSRules" onclick="toggleCheckbox('wafCRSRules')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules" target="_blank">WAF CRS Rules in Application Gateway</a>: Core Rule Set for WAF in Application Gateway.</li>
+            <li><input type="checkbox" id="checkbox-createWAFPolicy" onclick="toggleCheckbox('createWAFPolicy')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/ag/create-waf-policy-ag" target="_blank">Create WAF Policy for Application Gateway</a>: Steps to configure WAF policy.</li>
+            <li><input type="checkbox" id="checkbox-frontDoorOverview" onclick="toggleCheckbox('frontDoorOverview')">
+                <a href="https://learn.microsoft.com/azure/frontdoor/standard-premium/overview" target="_blank">Azure Front Door Overview</a>: High availability and performance for applications.</li>
+            <li><input type="checkbox" id="checkbox-wafFrontDoorCreatePortal" onclick="toggleCheckbox('wafFrontDoorCreatePortal')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/afds/waf-front-door-create-portal" target="_blank">WAF Front Door Create Portal</a>: Creating a WAF policy for Front Door.</li>
+            <li><input type="checkbox" id="checkbox-wafDiagram" onclick="toggleCheckbox('wafDiagram')">
+                <a href="https://learn.microsoft.com/azure/web-application-firewall/media/ag-overview/waf1.png" target="_blank">Web Application Firewall Diagram</a>: Diagram of WAF integration.</li>
+        </ul>
+    </div>
+
+    <!-- Secure Applications and DevSecOps -->
+    <div class="section" id="secureApplicationsAndDevSecOps">
+        <h2><input type="checkbox" id="checkbox-secureApplicationsAndDevSecOps" onclick="toggleSection('secureApplicationsAndDevSecOps')"> Secure Applications and DevSecOps</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-securityLifecycleForApps" onclick="toggleCheckbox('securityLifecycleForApps')">
+                <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-secure-applications/5-design-security-lifecycle-strategy-applications" target="_blank">Design Security Lifecycle for Applications</a>: Integrating security in the app lifecycle.</li>
+            <li><input type="checkbox" id="checkbox-devSecOpsControls" onclick="toggleCheckbox('devSecOpsControls')">
+                <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/secure/devsecops-controls" target="_blank">DevSecOps Controls in Cloud Adoption Framework</a>: DevSecOps practices in Azure.</li>
+            <li><input type="checkbox" id="checkbox-azureDevOpsSecurityBenchmark" onclick="toggleCheckbox('azureDevOpsSecurityBenchmark')">
+                <a href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security" target="_blank">Azure DevOps Security Benchmark</a>: Security benchmarks for DevOps.</li>
+            <li><input type="checkbox" id="checkbox-appLifecycleManagement" onclick="toggleCheckbox('appLifecycleManagement')">
+                <a href="https://learn.microsoft.com/azure/container-apps/application-lifecycle-management" target="_blank">Application Lifecycle Management</a>: Managing lifecycle of Azure container apps.</li>
+            <li><input type="checkbox" id="checkbox-designSecureAppsModule" onclick="toggleCheckbox('designSecureAppsModule')">
+                <a href="https://learn.microsoft.com/training/modules/design-solutions-secure-applications" target="_blank">Design Secure Applications Module</a>: Training on secure app design.</li>
+            <li><input type="checkbox" id="checkbox-azureOpenAIServiceGuide" onclick="toggleCheckbox('azureOpenAIServiceGuide')">
+                <a href="https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-openai" target="_blank">Service Guide for Azure OpenAI</a>: Using Azure OpenAI securely.</li>
+            <li><input type="checkbox" id="checkbox-sharedResponsibilityModel" onclick="toggleCheckbox('sharedResponsibilityModel')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility" target="_blank">Azure Shared Responsibility Model</a>: Division of security responsibilities.</li>
+            <li><input type="checkbox" id="checkbox-iaasSecurityFundamentals" onclick="toggleCheckbox('iaasSecurityFundamentals')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/iaas" target="_blank">Security Fundamentals for IaaS</a>: Securing Infrastructure as a Service.</li>
+            <li><input type="checkbox" id="checkbox-paasSecurityFundamentals" onclick="toggleCheckbox('paasSecurityFundamentals')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/paas-deployments" target="_blank">Security Fundamentals for PaaS</a>: Security in PaaS deployments.</li>
+            <li><input type="checkbox" id="checkbox-azurePenTestingRules" onclick="toggleCheckbox('azurePenTestingRules')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/pen-testing" target="_blank">Azure Penetration Testing Rules of Engagement</a>: Guidelines for pen testing on Azure.</li>
+            <li><input type="checkbox" id="checkbox-securityRiskDetection" onclick="toggleCheckbox('securityRiskDetection')">
+                <a href="https://www.microsoft.com/security-risk-detection/" target="_blank">Security Risk Detection for Applications</a>: Detect security risks in applications.</li>
+            <li><input type="checkbox" id="checkbox-postureVulnerabilityManagement" onclick="toggleCheckbox('postureVulnerabilityManagement')">
+                <a href="https://learn.microsoft.com/security/benchmark/azure/mcsb-posture-vulnerability-management" target="_blank">Posture and Vulnerability Management</a>: Security posture management best practices.</li>
+            <li><input type="checkbox" id="checkbox-azureSecurityCenterIntro" onclick="toggleCheckbox('azureSecurityCenterIntro')">
+                <a href="https://learn.microsoft.com/azure/security-center/security-center-introduction" target="_blank">Azure Security Center Introduction</a>: Unified security management in Azure.</li>
+        </ul>
+    </div>
+
+    <!-- Data Security and Compliance -->
+    <div class="section" id="dataSecurityAndCompliance">
+        <h2><input type="checkbox" id="checkbox-dataSecurityAndCompliance" onclick="toggleSection('dataSecurityAndCompliance')"> Data Security and Compliance</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-azurePurviewPortal" onclick="toggleCheckbox('azurePurviewPortal')">
+                <a href="https://web.purview.azure.com/resource/" target="_blank">Azure Purview Resource Portal</a>: Access Azure Purview resources.</li>
+            <li><input type="checkbox" id="checkbox-purviewCatalogSearch" onclick="toggleCheckbox('purviewCatalogSearch')">
+                <a href="https://learn.microsoft.com/azure/purview/how-to-search-catalog" target="_blank">Azure Purview Catalog Search</a>: Search and discover data assets.</li>
+            <li><input type="checkbox" id="checkbox-purviewInsights" onclick="toggleCheckbox('purviewInsights')">
+                <a href="https://learn.microsoft.com/azure/purview/concept-insights" target="_blank">Azure Purview Insights</a>: Data insights in Azure Purview.</li>
+            <li><input type="checkbox" id="checkbox-purviewDataSharing" onclick="toggleCheckbox('purviewDataSharing')">
+                <a href="https://learn.microsoft.com/azure/purview/concept-data-share" target="_blank">Azure Purview Data Sharing</a>: Securely sharing data using Purview.</li>
+            <li><input type="checkbox" id="checkbox-purviewPrivateLink" onclick="toggleCheckbox('purviewPrivateLink')">
+                <a href="https://learn.microsoft.com/azure/purview/catalog-private-link-end-to-end" target="_blank">Azure Purview Private Link</a>: Secure connectivity with Private Link.</li>
+            <li><input type="checkbox" id="checkbox-purviewSecurityBestPractices" onclick="toggleCheckbox('purviewSecurityBestPractices')">
+                <a href="https://learn.microsoft.com/azure/purview/concept-best-practices-security" target="_blank">Azure Purview Security Best Practices</a>: Best practices for securing Purview.</li>
+        </ul>
+    </div>
+
+    <!-- Data Encryption and Storage Security -->
+    <div class="section" id="dataEncryptionAndStorageSecurity">
+        <h2><input type="checkbox" id="checkbox-dataEncryptionAndStorageSecurity" onclick="toggleSection('dataEncryptionAndStorageSecurity')"> Data Encryption and Storage Security</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-dataEncryptionBestPractices" onclick="toggleCheckbox('dataEncryptionBestPractices')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/data-encryption-best-practices" target="_blank">Data Encryption Best Practices</a>: Encryption best practices in Azure.</li>
+            <li><input type="checkbox" id="checkbox-storageEncryptionDesign" onclick="toggleCheckbox('storageEncryptionDesign')">
+                <a href="https://learn.microsoft.com/azure/architecture/framework/security/design-storage-encryption" target="_blank">Azure Storage Encryption Design</a>: Designing encryption for Azure Storage.</li>
+            <li><input type="checkbox" id="checkbox-sqlDataClassification" onclick="toggleCheckbox('sqlDataClassification')">
+                <a href="https://learn.microsoft.com/azure/azure-sql/database/data-discovery-and-classification-overview" target="_blank">SQL Database Data Classification</a>: Classifying data in Azure SQL.</li>
+            <li><input type="checkbox" id="checkbox-storageServiceEncryption" onclick="toggleCheckbox('storageServiceEncryption')">
+                <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-service-encryption" target="_blank">Azure Storage Service Encryption</a>: Overview of Azure Storage encryption.</li>
+            <li><input type="checkbox" id="checkbox-storageBlobsOverview" onclick="toggleCheckbox('storageBlobsOverview')">
+                <a href="https://azure.microsoft.com/services/storage/blobs/" target="_blank">Azure Storage Blobs Overview</a>: Introduction to Azure Blob Storage.</li>
+            <li><input type="checkbox" id="checkbox-diskEncryptionLinuxVM" onclick="toggleCheckbox('diskEncryptionLinuxVM')">
+                <a href="https://learn.microsoft.com/azure/virtual-machines/linux/disk-encryption-overview" target="_blank">Azure Disk Encryption for Linux VMs</a>: Encrypting disks on Linux VMs.</li>
+            <li><input type="checkbox" id="checkbox-availabilitySetVM" onclick="toggleCheckbox('availabilitySetVM')">
+                <a href="https://learn.microsoft.com/azure/virtual-machines/availability-set-overview" target="_blank">Azure Virtual Machines Availability Set</a>: High availability with Availability Sets.</li>
+        </ul>
+    </div>
+
+    <!-- Advanced Data Security -->
+    <div class="section" id="advancedDataSecurity">
+        <h2><input type="checkbox" id="checkbox-advancedDataSecurity" onclick="toggleSection('advancedDataSecurity')"> Advanced Data Security</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-defenderForStorage" onclick="toggleCheckbox('defenderForStorage')">
+                <a href="https://learn.microsoft.com/azure/defender-for-cloud/defender-for-storage-introduction" target="_blank">Azure Defender for Storage</a>: Protecting storage accounts with Defender.</li>
+            <li><input type="checkbox" id="checkbox-defenderForSQL" onclick="toggleCheckbox('defenderForSQL')">
+                <a href="https://learn.microsoft.com/azure/defender-for-cloud/defender-for-sql-introduction" target="_blank">Azure Defender for SQL</a>: Defender for securing SQL databases.</li>
+            <li><input type="checkbox" id="checkbox-defenderForCosmosDB" onclick="toggleCheckbox('defenderForCosmosDB')">
+                <a href="https://learn.microsoft.com/azure/defender-for-cloud/concept-defender-for-cosmos" target="_blank">Azure Defender for Cosmos DB</a>: Securing Cosmos DB with Defender.</li>
+            <li><input type="checkbox" id="checkbox-databaseProtectionsQuickstart" onclick="toggleCheckbox('databaseProtectionsQuickstart')">
+                <a href="https://learn.microsoft.com/azure/defender-for-cloud/quickstart-enable-database-protections" target="_blank">Database Protections Quickstart</a>: Enabling database protections in Defender.</li>
+            <li><input type="checkbox" id="checkbox-defenderForStorageConfig" onclick="toggleCheckbox('defenderForStorageConfig')">
+                <a href="https://learn.microsoft.com/azure/storage/common/azure-defender-storage-configure" target="_blank">Configuring Azure Defender for Storage</a>: Configure Defender for Storage.</li>
+            <li><input type="checkbox" id="checkbox-insideTrackThreatIntel" onclick="toggleCheckbox('insideTrackThreatIntel')">
+                <a href="https://www.microsoft.com/insidetrack/microsoft-uses-threat-intelligence-to-protect-detect-and-respond-to-threats" target="_blank">Microsoft Inside Track on Threat Intelligence</a>: Microsoft’s threat intelligence insights.</li>
+            <li><input type="checkbox" id="checkbox-securityResourcesDownload" onclick="toggleCheckbox('securityResourcesDownload')">
+                <a href="https://go.microsoft.com/fwlink/?linkid=2128684" target="_blank">Microsoft Download Link for Security Resources</a>: Downloadable security resources.</li>
+            <li><input type="checkbox" id="checkbox-aksSecurityBaseline" onclick="toggleCheckbox('aksSecurityBaseline')">
+                <a href="https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/aks-security-baseline" target="_blank">AKS Security Baseline</a>: Security baseline for Azure Kubernetes Service.</li>
+            <li><input type="checkbox" id="checkbox-infrastructureTrainingPath" onclick="toggleCheckbox('infrastructureTrainingPath')">
+                <a href="https://learn.microsoft.com/training/paths/sc-100-design-security-solutions-infrastructure" target="_blank">Security Solutions for Infrastructure Training Path</a>: Learning path for infrastructure security.</li>
+            <li><input type="checkbox" id="checkbox-appServiceSecurityBaseline" onclick="toggleCheckbox('appServiceSecurityBaseline')">
+                <a href="https://learn.microsoft.com/security/benchmark/azure/baselines/app-service-security-baseline" target="_blank">App Service Security Baseline</a>: Security baseline for Azure App Service.</li>
+            <li><input type="checkbox" id="checkbox-iotHubSecurityBaseline" onclick="toggleCheckbox('iotHubSecurityBaseline')">
+                <a href="https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/iot-hub-security-baseline" target="_blank">IoT Hub Security Baseline</a>: Security recommendations for IoT Hub.</li>
+            <li><input type="checkbox" id="checkbox-antimalwareSecurityFundamentals" onclick="toggleCheckbox('antimalwareSecurityFundamentals')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/antimalware" target="_blank">Azure Security Fundamentals for Antimalware</a>: Using antimalware in Azure.</li>
+            <li><input type="checkbox" id="checkbox-securityCenterOverview" onclick="toggleCheckbox('securityCenterOverview')">
+                <a href="https://learn.microsoft.com/azure/security-center/security-center-introduction" target="_blank">Azure Security Center Overview</a>: Overview of Azure Security Center.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Infrastructure and Network Security -->
+<div class="section" id="infrastructureAndNetworkSecurity">
+    <h2><input type="checkbox" id="checkbox-infrastructureAndNetworkSecurity" onclick="toggleSection('infrastructureAndNetworkSecurity')"> Infrastructure and Network Security</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-azureFirewallOverview" onclick="toggleCheckbox('azureFirewallOverview')">
+            <a href="https://learn.microsoft.com/azure/firewall/overview" target="_blank">Azure Firewall Overview</a>: Network security and traffic filtering with Azure Firewall.</li>
+        <li><input type="checkbox" id="checkbox-vnetDMZArchitecture" onclick="toggleCheckbox('vnetDMZArchitecture')">
+            <a href="https://learn.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-dmz?tabs=portal" target="_blank">Virtual Network DMZ Architecture</a>: Secure DMZ in Azure Virtual Networks.</li>
+        <li><input type="checkbox" id="checkbox-expressRouteHybridNetworking" onclick="toggleCheckbox('expressRouteHybridNetworking')">
+            <a href="https://learn.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/expressroute" target="_blank">ExpressRoute Hybrid Networking</a>: Hybrid networking solutions with ExpressRoute.</li>
+        <li><input type="checkbox" id="checkbox-networkSecurityBestPractices" onclick="toggleCheckbox('networkSecurityBestPractices')">
+            <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/network-best-practices" target="_blank">Network Security Best Practices</a>: Securing network infrastructure in Azure.</li>
+        <li><input type="checkbox" id="checkbox-azureDDOSProtection" onclick="toggleCheckbox('azureDDOSProtection')">
+            <a href="https://learn.microsoft.com/azure/ddos-protection/ddos-protection-overview" target="_blank">Azure DDoS Protection Overview</a>: Safeguard applications with DDoS protection.</li>
+        <li><input type="checkbox" id="checkbox-azureDiskEncryptionLinuxVM" onclick="toggleCheckbox('azureDiskEncryptionLinuxVM')">
+            <a href="https://learn.microsoft.com/azure/virtual-machines/linux/disk-encryption-overview" target="_blank">Azure Disk Encryption for Linux VMs</a>: Encrypting disks on Linux VMs.</li>
+        <li><input type="checkbox" id="checkbox-azureAppServiceOverview" onclick="toggleCheckbox('azureAppServiceOverview')">
+            <a href="https://learn.microsoft.com/azure/app-service/overview" target="_blank">Azure App Service Overview</a>: Build and host web applications with App Service.</li>
+        <li><input type="checkbox" id="checkbox-cloudServicesComparison" onclick="toggleCheckbox('cloudServicesComparison')">
+            <a href="https://learn.microsoft.com/azure/cloud-services/cloud-services-choose-me" target="_blank">Azure Cloud Services Comparison</a>: Compare Azure cloud services.</li>
+    </ul>
+</div>
+
+<!-- Infrastructure Monitoring and Posture Management -->
+<div class="section" id="infrastructureMonitoringAndPostureManagement">
+    <h2><input type="checkbox" id="checkbox-infrastructureMonitoringAndPostureManagement" onclick="toggleSection('infrastructureMonitoringAndPostureManagement')"> Infrastructure Monitoring and Posture Management</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-cspmInDefender" onclick="toggleCheckbox('cspmInDefender')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/concept-cloud-security-posture-management" target="_blank">Cloud Security Posture Management in Defender</a>: CSPM capabilities in Microsoft Defender.</li>
+        <li><input type="checkbox" id="checkbox-agentlessDataCollectionDefender" onclick="toggleCheckbox('agentlessDataCollectionDefender')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/concept-agentless-data-collection" target="_blank">Agentless Data Collection in Defender for Cloud</a>: Data collection without agents.</li>
+        <li><input type="checkbox" id="checkbox-attackPathAnalysisDefender" onclick="toggleCheckbox('attackPathAnalysisDefender')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/concept-attack-path" target="_blank">Attack Path Analysis in Defender for Cloud</a>: Identify and mitigate vulnerabilities.</li>
+        <li><input type="checkbox" id="checkbox-secureScoreInDefender" onclick="toggleCheckbox('secureScoreInDefender')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/secure-score-security-controls" target="_blank">Secure Score and Security Controls in Defender</a>: Secure score metrics in Defender.</li>
+        <li><input type="checkbox" id="checkbox-integratedPostureManagement" onclick="toggleCheckbox('integratedPostureManagement')">
+            <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-security-posture-management-hybrid-multicloud-environments/3-design-integrated-posture-management-workload-protection" target="_blank">Integrated Posture Management in Hybrid/Multi-cloud</a>: Security posture across hybrid/multi-cloud.</li>
+        <li><input type="checkbox" id="checkbox-defenderCloudIntroduction" onclick="toggleCheckbox('defenderCloudIntroduction')">
+            <a href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction" target="_blank">Defender for Cloud Introduction</a>: Enhanced security with Microsoft Defender.</li>
+        <li><input type="checkbox" id="checkbox-defenderForServers" onclick="toggleCheckbox('defenderForServers')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/plan-defender-for-servers" target="_blank">Defender for Servers Planning Guide</a>: Deploying Defender for Servers.</li>
+        <li><input type="checkbox" id="checkbox-defenderForAppService" onclick="toggleCheckbox('defenderForAppService')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/defender-for-app-service-introduction" target="_blank">Defender for App Service Introduction</a>: Securing web applications.</li>
+        <li><input type="checkbox" id="checkbox-defenderForSQL" onclick="toggleCheckbox('defenderForSQL')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/defender-for-sql-usage" target="_blank">Defender for SQL Usage</a>: Protect SQL databases.</li>
+        <li><input type="checkbox" id="checkbox-defenderForIoT" onclick="toggleCheckbox('defenderForIoT')">
+            <a href="https://learn.microsoft.com/azure/defender-for-iot/organizations/overview" target="_blank">Defender for IoT Overview</a>: Secure IoT devices.</li>
+        <li><input type="checkbox" id="checkbox-defenderForCloudApps" onclick="toggleCheckbox('defenderForCloudApps')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-apps-introduction" target="_blank">Defender for Cloud Apps Service Introduction</a>: SaaS security with Defender.</li>
+        <li><input type="checkbox" id="checkbox-externalAttackSurfaceManagement" onclick="toggleCheckbox('externalAttackSurfaceManagement')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/concept-easm" target="_blank">Defender for Cloud External Attack Surface Management</a>: Managing external attack surfaces.</li>
+    </ul>
+</div>
+
+<!-- Infrastructure Compliance -->
+<div class="section" id="infrastructureCompliance">
+    <h2><input type="checkbox" id="checkbox-infrastructureCompliance" onclick="toggleSection('infrastructureCompliance')"> Infrastructure Compliance</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-evaluateComplianceInDefender" onclick="toggleCheckbox('evaluateComplianceInDefender')">
+            <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-regulatory-compliance/6-evaluate-infrastructure-compliance-defender-cloud" target="_blank">Evaluate Infrastructure Compliance in Defender</a>: Assess compliance with Defender for Cloud.</li>
+        <li><input type="checkbox" id="checkbox-regulatoryComplianceModule" onclick="toggleCheckbox('regulatoryComplianceModule')">
+            <a href="https://learn.microsoft.com/training/modules/design-solutions-security-posture-management-hybrid-multicloud-environments" target="_blank">Regulatory Compliance Module for Infrastructure</a>: Compliance for infrastructure solutions.</li>
+        <li><input type="checkbox" id="checkbox-secureOperationalTechnology" onclick="toggleCheckbox('secureOperationalTechnology')">
+            <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-securing-server-client-endpoints/5-design-solution-securing-operational-technology-industrial-control-systems" target="_blank">Secure Operational Technology in Defender</a>: Security solutions for OT and ICS.</li>
+        <li><input type="checkbox" id="checkbox-azureSecurityBenchmarkPosture" onclick="toggleCheckbox('azureSecurityBenchmarkPosture')">
+            <a href="https://learn.microsoft.com/security/benchmark/azure/mcsb-posture-vulnerability-management?source=recommendations" target="_blank">Azure Security Benchmark for Posture and Vulnerability Management</a>: Best practices for security posture.</li>
+        <li><input type="checkbox" id="checkbox-secureScoreTracking" onclick="toggleCheckbox('secureScoreTracking')">
+            <a href="https://learn.microsoft.com/azure/defender-for-cloud/secure-score-access-and-track" target="_blank">Access and Track Secure Score</a>: Track secure score in Defender.</li>
+        <li><input type="checkbox" id="checkbox-incidentResponseBenchmark" onclick="toggleCheckbox('incidentResponseBenchmark')">
+            <a href="https://learn.microsoft.com/security/benchmark/azure/mcsb-incident-response" target="_blank">Azure Security Benchmark for Incident Response</a>: Incident response best practices.</li>
+    </ul>
+</div>
+
+<!-- Endpoint Security and Device Management -->
+<div class="section" id="endpointSecurityAndDeviceManagement">
+    <h2><input type="checkbox" id="checkbox-endpointSecurityAndDeviceManagement" onclick="toggleSection('endpointSecurityAndDeviceManagement')"> Endpoint Security and Device Management</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-intuneOverview" onclick="toggleCheckbox('intuneOverview')">
+            <a href="https://learn.microsoft.com/mem/intune/fundamentals/what-is-intune" target="_blank">Microsoft Intune Overview</a>: Mobile device and app management with Intune.</li>
+        <li><input type="checkbox" id="checkbox-endpointManagerWalkthrough" onclick="toggleCheckbox('endpointManagerWalkthrough')">
+            <a href="https://learn.microsoft.com/mem/intune/fundamentals/tutorial-walkthrough-endpoint-manager" target="_blank">Endpoint Manager Walkthrough</a>: Device management with Endpoint Manager.</li>
+        <li><input type="checkbox" id="checkbox-embeddedDeviceSecurity" onclick="toggleCheckbox('embeddedDeviceSecurity')">
+            <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-securing-server-client-endpoints/4-specify-embedded-device-security-requirements" target="_blank">Embedded Device Security Requirements</a>: Security for embedded and IoT devices.</li>
+        <li><input type="checkbox" id="checkbox-iotSecurityFramework" onclick="toggleCheckbox('iotSecurityFramework')">
+            <a href="https://learn.microsoft.com/azure/architecture/framework/iot/iot-security" target="_blank">IoT Security in Azure Architecture Framework</a>: Secure IoT solutions in Azure.</li>
+        <li><input type="checkbox" id="checkbox-windowsForIoTOverview" onclick="toggleCheckbox('windowsForIoTOverview')">
+            <a href="https://www.microsoft.com/WindowsForBusiness/windows-iot" target="_blank">Windows for IoT Overview</a>: Windows OS for IoT devices.</li>
+        <li><input type="checkbox" id="checkbox-iotHubOverview" onclick="toggleCheckbox('iotHubOverview')">
+            <a href="https://azure.microsoft.com/services/iot-hub" target="_blank">Azure IoT Hub Overview</a>: Manage IoT assets with IoT Hub.</li>
+        <li><input type="checkbox" id="checkbox-endpointSecurityBaseline" onclick="toggleCheckbox('endpointSecurityBaseline')">
+            <a href="https://learn.microsoft.com/security/benchmark/azure/mcsb-endpoint-security" target="_blank">Endpoint Security Baseline in Azure</a>: Security baseline for endpoints.</li>
+        <li><input type="checkbox" id="checkbox-intuneSecurityBaselines" onclick="toggleCheckbox('intuneSecurityBaselines')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baselines" target="_blank">Microsoft Intune Security Baselines Overview</a>: Intune security baselines.</li>
+        <li><input type="checkbox" id="checkbox-mdmSecurityBaselineSettings" onclick="toggleCheckbox('mdmSecurityBaselineSettings')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baseline-settings-mdm-all" target="_blank">Security Baseline Settings for MDM (Latest)</a>: Latest MDM security baseline settings.</li>
+        <li><input type="checkbox" id="checkbox-advancedThreatProtection" onclick="toggleCheckbox('advancedThreatProtection')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/advanced-threat-protection" target="_blank">Advanced Threat Protection</a>: Defender ATP with Intune.</li>
+        <li><input type="checkbox" id="checkbox-defenderATPSecurityBaseline" onclick="toggleCheckbox('defenderATPSecurityBaseline')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baseline-settings-defender-atp" target="_blank">Defender ATP Security Baseline Settings</a>: Security baseline for Defender ATP.</li>
+        <li><input type="checkbox" id="checkbox-edgeSecurityBaseline" onclick="toggleCheckbox('edgeSecurityBaseline')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baseline-settings-edge" target="_blank">Edge Security Baseline Settings</a>: Security baseline for Microsoft Edge.</li>
+        <li><input type="checkbox" id="checkbox-windows365SecurityBaseline" onclick="toggleCheckbox('windows365SecurityBaseline')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baseline-settings-windows-365" target="_blank">Windows 365 Security Baseline</a>: Security baseline for Windows 365.</li>
+        <li><input type="checkbox" id="checkbox-officeSettingsSecurityBaseline" onclick="toggleCheckbox('officeSettingsSecurityBaseline')">
+            <a href="https://learn.microsoft.com/en-us/mem/intune/protect/security-baseline-v2-office-settings?pivots=v2306" target="_blank">Office Settings Security Baseline</a>: Baseline for Office applications.</li>
+        <!-- Additional historical security baselines -->
+        <li><input type="checkbox" id="checkbox-mdmSecurityBaseline2021" onclick="toggleCheckbox('mdmSecurityBaseline2021')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baseline-settings-mdm-all?pivots=november-2021" target="_blank">MDM Security Baseline (November 2021)</a>: Baseline as of November 2021.</li>
+        <li><input type="checkbox" id="checkbox-defenderATPSecurityBaseline2020" onclick="toggleCheckbox('defenderATPSecurityBaseline2020')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baseline-settings-defender-atp?pivots=december-2020" target="_blank">Defender ATP Security Baseline (December 2020)</a>: Baseline as of December 2020.</li>
+        <li><input type="checkbox" id="checkbox-edgeSecurityBaseline2020" onclick="toggleCheckbox('edgeSecurityBaseline2020')">
+            <a href="https://learn.microsoft.com/mem/intune/protect/security-baseline-settings-edge?pivots=edge-sept-2020" target="_blank">Edge Security Baseline (September 2020)</a>: Baseline for Edge in September 2020.</li>
+    </ul>
+</div>
+
+<!-- Microsoft Defender for Endpoint and Device Baselines -->
+<div class="section" id="defenderForEndpointAndDeviceBaselines">
+    <h2><input type="checkbox" id="checkbox-defenderForEndpointAndDeviceBaselines" onclick="toggleSection('defenderForEndpointAndDeviceBaselines')"> Microsoft Defender for Endpoint and Device Baselines</h2>
+    <ul>
+        <li><input type="checkbox" id="checkbox-vmWindowsSecurityBaseline" onclick="toggleCheckbox('vmWindowsSecurityBaseline')">
+            <a href="https://learn.microsoft.com/security/benchmark/azure/baselines/virtual-machines-windows-security-baseline" target="_blank">Virtual Machines Windows Security Baseline</a>: Security baseline for Windows VMs in Azure.</li>
+        <li><input type="checkbox" id="checkbox-secureServerClientEndpoints" onclick="toggleCheckbox('secureServerClientEndpoints')">
+            <a href="https://learn.microsoft.com/training/modules/design-solutions-securing-server-client-endpoints" target="_blank">Security Solutions for Securing Server and Client Endpoints</a>: Training on securing endpoints.</li>
+        <li><input type="checkbox" id="checkbox-remoteAccessVMs" onclick="toggleCheckbox('remoteAccessVMs')">
+            <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/plan-for-virtual-machine-remote-access" target="_blank">Plan for Remote Access on VMs</a>: Best practices for remote access to VMs.</li>
+    </ul>
+</div>
+
+<!-- Domain 4: Design Security Solutions for Applications and Data -->
+<div class="domain" id="domain4">
+    <h1>Design Security Solutions for Applications and Data</h1>
+
+    <!-- Application Security and DevSecOps -->
+    <div class="section" id="applicationSecurityAndDevSecOps">
+        <h2><input type="checkbox" id="checkbox-applicationSecurityAndDevSecOps" onclick="toggleSection('applicationSecurityAndDevSecOps')"> Application Security and DevSecOps</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-securityLifecycleForApps" onclick="toggleCheckbox('securityLifecycleForApps')">
+                <a href="https://learn.microsoft.com/en-us/training/modules/design-solutions-secure-applications/5-design-security-lifecycle-strategy-applications" target="_blank">Design Security Lifecycle for Applications</a>: Strategies for app security lifecycle integration.</li>
+            <li><input type="checkbox" id="checkbox-secureMicrosoft365Apps" onclick="toggleCheckbox('secureMicrosoft365Apps')">
+                <a href="https://learn.microsoft.com/training/modules/design-solutions-secure-microsoft-365" target="_blank">Secure Microsoft 365 Applications</a>: Module on app security in Microsoft 365.</li>
+            <li><input type="checkbox" id="checkbox-devSecOpsSecurityBaseline" onclick="toggleCheckbox('devSecOpsSecurityBaseline')">
+                <a href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security" target="_blank">DevSecOps Security Baseline</a>: Baseline for DevSecOps practices.</li>
+            <li><input type="checkbox" id="checkbox-azurePenTestingRules" onclick="toggleCheckbox('azurePenTestingRules')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/pen-testing" target="_blank">Azure Penetration Testing Rules of Engagement</a>: Guidelines for pen testing in Azure.</li>
+            <li><input type="checkbox" id="checkbox-securityRiskDetection" onclick="toggleCheckbox('securityRiskDetection')">
+                <a href="https://www.microsoft.com/security-risk-detection/" target="_blank">Security Risk Detection for Applications</a>: Tool for app risk detection.</li>
+            <li><input type="checkbox" id="checkbox-postureVulnerabilityManagement" onclick="toggleCheckbox('postureVulnerabilityManagement')">
+                <a href="https://learn.microsoft.com/security/benchmark/azure/mcsb-posture-vulnerability-management" target="_blank">Posture and Vulnerability Management</a>: Best practices for vulnerability management.</li>
+            <li><input type="checkbox" id="checkbox-azureSecurityCenterIntro" onclick="toggleCheckbox('azureSecurityCenterIntro')">
+                <a href="https://learn.microsoft.com/azure/security-center/security-center-introduction" target="_blank">Azure Security Center Introduction</a>: Unified security management overview.</li>
+            <li><input type="checkbox" id="checkbox-sharedResponsibilityModel" onclick="toggleCheckbox('sharedResponsibilityModel')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility" target="_blank">Azure Shared Responsibility Model</a>: Responsibilities between Azure and customers.</li>
+            <li><input type="checkbox" id="checkbox-iaasSecurityFundamentals" onclick="toggleCheckbox('iaasSecurityFundamentals')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/iaas" target="_blank">Security Fundamentals for IaaS</a>: Securing Infrastructure as a Service.</li>
+            <li><input type="checkbox" id="checkbox-paasSecurityFundamentals" onclick="toggleCheckbox('paasSecurityFundamentals')">
+                <a href="https://learn.microsoft.com/azure/security/fundamentals/paas-deployments" target="_blank">Security Fundamentals for PaaS</a>: Security for Platform as a Service.</li>
+        </ul>
+    </div>
+
+    <!-- Additional Resources -->
+    <div class="section" id="additionalResources">
+        <h2><input type="checkbox" id="checkbox-additionalResources" onclick="toggleSection('additionalResources')"> Additional Resources</h2>
+        <ul>
+            <li><input type="checkbox" id="checkbox-azureLogicAppsOverview" onclick="toggleCheckbox('azureLogicAppsOverview')">
+                <a href="https://learn.microsoft.com/azure/logic-apps/logic-apps-overview" target="_blank">Azure Logic Apps Overview</a>: Automate workflows with Logic Apps.</li>
+        </ul>
+    </div>
+</div>
+
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => loadState());
+
+        function loadState() {
+            document.querySelectorAll("input[type=checkbox]").forEach(checkbox => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === "checked") {
+                    checkbox.checked = true;
+                }
+            });
+            applySectionChecks();
+        }
+
+        function saveState(id, state) {
+            localStorage.setItem(id, state ? "checked" : "unchecked");
+        }
+
+        function toggleCheckbox(id) {
+            const checkbox = document.getElementById("checkbox-" + id);
+            saveState("checkbox-" + id, checkbox.checked);
+            applySectionChecks();
+        }
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const sectionCheckbox = document.getElementById("checkbox-" + sectionId);
+            section.querySelectorAll("input[type=checkbox]:not(h2 input)").forEach(item => {
+                item.checked = sectionCheckbox.checked;
+                saveState(item.id, sectionCheckbox.checked);
+            });
+            saveState("checkbox-" + sectionId, sectionCheckbox.checked);
+        }
+
+        function applySectionChecks() {
+            document.querySelectorAll(".section").forEach(section => {
+                const sectionItems = section.querySelectorAll("input[type=checkbox]:not(h2 input)");
+                const sectionCheckbox = section.querySelector("h2 input[type=checkbox]");
+                sectionCheckbox.checked = Array.from(sectionItems).every(item => item.checked);
+            });
+        }
+
+        function showAll() {
+            document.querySelectorAll(".section").forEach(section => {
+                section.classList.remove("hidden");
+                section.querySelectorAll("p, li").forEach(item => item.classList.remove("hidden"));
+            });
+        }
+
+        function showChecked() {
+            document.querySelectorAll(".section").forEach(section => {
+                let hasCheckedItem = false;
+                section.querySelectorAll("p, li").forEach(item => {
+                    const checkbox = item.querySelector("input[type=checkbox]");
+                    if (checkbox.checked) {
+                        item.classList.remove("hidden");
+                        hasCheckedItem = true;
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+                section.classList.toggle("hidden", !hasCheckedItem);
+            });
+        }
+
+        function showUnchecked() {
+            document.querySelectorAll(".section").forEach(section => {
+                let hasUncheckedItem = false;
+                section.querySelectorAll("p, li").forEach(item => {
+                    const checkbox = item.querySelector("input[type=checkbox]");
+                    if (!checkbox.checked) {
+                        item.classList.remove("hidden");
+                        hasUncheckedItem = true;
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+                section.classList.toggle("hidden", !hasUncheckedItem);
+            });
+        }
+
+        function resetCheckboxes() {
+            const confirmReset = confirm("Are you sure you want to reset all checkboxes?");
+            if (confirmReset) {
+                document.querySelectorAll("input[type=checkbox]").forEach(checkbox => {
+                    checkbox.checked = false;
+                    saveState(checkbox.id, false);
+                });
+                applySectionChecks();
+                showAll();
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            const backToTopButton = document.getElementById("backToTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        function navigateToSection() {
+            const dropdown = document.getElementById("sectionDropdown");
+            const selectedSection = dropdown.value;
+            if (selectedSection) {
+                document.getElementById(selectedSection).scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+      </html>
