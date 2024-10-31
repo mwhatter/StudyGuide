@@ -5,7 +5,7 @@
 
 ## Overview
 
-ArchitectureLinks is an interactive guide for designing secure, compliant, and resilient cybersecurity architectures using Microsoft technologies. This project provides curated links to best practices, frameworks, and tools to help organizations implement security measures aligned with Azure and Microsoft 365 environments.
+Interactive guide for designing secure, compliant, and resilient cybersecurity architectures using Microsoft technologies. This project provides curated links to best practices, frameworks, and tools to help organizations implement security measures aligned with Azure and Microsoft 365 environments.
 
 ## Key Sections
 
