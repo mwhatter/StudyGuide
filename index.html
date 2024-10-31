@@ -93,6 +93,11 @@
             font-size: 1em;
             max-width: 100%;
         }
+        #statistics {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
@@ -142,6 +147,12 @@
         </select>
     </div>
 
+    <div id="statistics">
+        <p>Checked: <span id="checkedCount">0</span></p>
+        <p>Unchecked: <span id="uncheckedCount">0</span></p>
+        <p>Percentage Checked: <span id="percentageChecked">0%</span></p>
+    </div>
+
 <!-- Domain 1: Design Solutions that Align with Security Best Practices and Priorities -->
 <div class="domain" id="domain1">
     <h1>Design Solutions that Align with Security Best Practices and Priorities</h1>
@@ -151,7 +162,7 @@
         <h2><input type="checkbox" id="checkbox-zeroTrustAndSecurityFrameworks" onclick="toggleSection('zeroTrustAndSecurityFrameworks')"> Zero Trust and Security Frameworks</h2>
         <ul>
             <li><input type="checkbox" id="checkbox-zeroTrustRampOverview" onclick="toggleCheckbox('zeroTrustRampOverview')"> 
-                <a href="https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-ramp-overview" target="_blank">Zero Trust Ramp Overview</a>: Introduction to the Zero Trust security model.</li>
+                <a href="https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-ramp-overview" target="_blank">Zero Trust RaMP Overview</a>: Introduction to the Zero Trust security model.</li>
             <li><input type="checkbox" id="checkbox-zeroTrustDeploymentOverview" onclick="toggleCheckbox('zeroTrustDeploymentOverview')"> 
                 <a href="https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview" target="_blank">Zero Trust Deployment Overview</a>: Deployment guidelines for Zero Trust.</li>
             <li><input type="checkbox" id="checkbox-visibilityAutomationOrchestration" onclick="toggleCheckbox('visibilityAutomationOrchestration')"> 
@@ -224,11 +235,7 @@
                 <a href="https://aka.ms/mcra" target="_blank">Microsoft Cybersecurity Reference Architecture (MCRA)</a>: Cybersecurity architecture for Microsoft platforms.</li>
             <li><input type="checkbox" id="checkbox-securityPriorityArchitecture" onclick="toggleCheckbox('securityPriorityArchitecture')"> 
                 <a href="https://aka.ms/SPA" target="_blank">Security Priority Architecture (SPA)</a>: Prioritizing security investments and initiatives.</li>
-            <li><input type="checkbox" id="checkbox-microsoftFormsSurvey1" onclick="toggleCheckbox('microsoftFormsSurvey1')"> 
-                <a href="https://forms.office.com/r/Cr5N25iRwW" target="_blank">Microsoft Forms Survey 1</a>: Survey form for gathering feedback.</li>
-            <li><input type="checkbox" id="checkbox-microsoftFormsSurvey2" onclick="toggleCheckbox('microsoftFormsSurvey2')"> 
-                <a href="https://forms.office.com/Pages/ShareFormPage.aspx?id=v4j5cvGGr0GRqy180BHbRwpfG-Vquv5DmCLkH2n8DBZUNjZaT045VTM3VUZIU1lFQzJZS0NJT05EQy4u&sharetoken=OGafrKZ5HmmeVcvqOEA8" target="_blank">Microsoft Forms Survey 2</a>: Survey form for collecting information.</li>
-        </ul>
+            </ul>
     </div>
 
     <!-- Training Modules and Case Studies -->
@@ -827,6 +834,7 @@ keyVaultAlerts')">
                 }
             });
             applySectionChecks();
+            updateStatistics();
         }
 
         function saveState(id, state) {
@@ -837,6 +845,7 @@ keyVaultAlerts')">
             const checkbox = document.getElementById("checkbox-" + id);
             saveState("checkbox-" + id, checkbox.checked);
             applySectionChecks();
+            updateStatistics();
         }
 
         function toggleSection(sectionId) {
@@ -847,6 +856,7 @@ keyVaultAlerts')">
                 saveState(item.id, sectionCheckbox.checked);
             });
             saveState("checkbox-" + sectionId, sectionCheckbox.checked);
+            updateStatistics();
         }
 
         function applySectionChecks() {
@@ -862,6 +872,7 @@ keyVaultAlerts')">
                 section.classList.remove("hidden");
                 section.querySelectorAll("p, li").forEach(item => item.classList.remove("hidden"));
             });
+            updateStatistics();
         }
 
         function showChecked() {
@@ -878,6 +889,7 @@ keyVaultAlerts')">
                 });
                 section.classList.toggle("hidden", !hasCheckedItem);
             });
+            updateStatistics();
         }
 
         function showUnchecked() {
@@ -894,6 +906,7 @@ keyVaultAlerts')">
                 });
                 section.classList.toggle("hidden", !hasUncheckedItem);
             });
+            updateStatistics();
         }
 
         function resetCheckboxes() {
@@ -905,6 +918,7 @@ keyVaultAlerts')">
                 });
                 applySectionChecks();
                 showAll();
+                updateStatistics();
             }
         }
 
@@ -928,6 +942,17 @@ keyVaultAlerts')">
                 document.getElementById(selectedSection).scrollIntoView({ behavior: 'smooth' });
             }
         }
+
+        function updateStatistics() {
+            const checkboxes = document.querySelectorAll("input[type=checkbox]:not(h2 input)");
+            const checkedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+            const uncheckedCount = checkboxes.length - checkedCount;
+            const percentageChecked = (checkedCount / checkboxes.length) * 100;
+
+            document.getElementById("checkedCount").textContent = checkedCount;
+            document.getElementById("uncheckedCount").textContent = uncheckedCount;
+            document.getElementById("percentageChecked").textContent = percentageChecked.toFixed(2) + "%";
+        }
     </script>
 </body>
-      </html>
+</html>
